@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -14,6 +15,25 @@ class ViewController: UIViewController {
     var maxTaps = 0
     var currentTaps = 0
     var currentTaps2 = 0
+    var btnSound : AVAudioPlayer!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let path = NSBundle.mainBundle().pathForResource("btn", ofType: "wav")
+        
+        let soundUrl = NSURL(fileURLWithPath: path!)
+        
+        do{
+            
+            try btnSound = AVAudioPlayer(contentsOfURL: soundUrl)       //Use 'try' in a do loop when throw error is shown
+            btnSound.prepareToPlay()
+            
+        } catch let err as NSError{
+            print(err.debugDescription)
+        }
+    }
+
 
     @IBOutlet weak var logoImg: UIImageView!
     @IBOutlet weak var howManyTapstxt: UITextField!
@@ -38,6 +58,7 @@ class ViewController: UIViewController {
         self.resignFirstResponder()
     }
     @IBAction func onPlayBtnPressed(sender: UIButton){
+        playSound()
         
         if howManyTapstxt.text != nil && howManyTapstxt.text != "" {
             
@@ -63,6 +84,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func coinTap(sender: UIButton){
+        playSound()
         
         currentTaps++
         
@@ -94,6 +116,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func coinTap2(sender: UIButton) {
+        playSound()
         
         currentTaps2++
         
@@ -101,6 +124,13 @@ class ViewController: UIViewController {
             
             restartGame()
         }
+    }
+    
+    func playSound(){
+        if btnSound.playing{
+            btnSound.stop()
+        }
+        btnSound.play()
     }
 
 
