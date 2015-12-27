@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     //Variables
     var maxTaps = 0
     var currentTaps = 0
+    var currentTaps2 = 0
 
     @IBOutlet weak var logoImg: UIImageView!
     @IBOutlet weak var howManyTapstxt: UITextField!
@@ -20,10 +21,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tapBtn: UIButton!
     @IBOutlet weak var tapsToGo: UILabel!
+    @IBOutlet weak var tapBtn2: UIButton!
     
     
     func updateTaplbl(){
-        tapsToGo.text = "\(maxTaps-currentTaps) Taps to go! "
+        if currentTaps2 >= currentTaps{
+            tapsToGo.text = "Player 2 wins!!"
+        } else {
+            tapsToGo.text = "Player 1 wins!!"
+        }
+    
     }
     
     @IBAction func dismissKeypad(sender: AnyObject) {
@@ -39,12 +46,14 @@ class ViewController: UIViewController {
             playBtn.hidden = true
             
             tapBtn.hidden = false
-            tapsToGo.hidden = false
+            tapBtn2.hidden = false
+            tapsToGo.hidden = true
             
             maxTaps = Int(howManyTapstxt.text!)!
             currentTaps = 0
+            currentTaps2 = 0
             
-            updateTaplbl()
+            //updateTaplbl()
             
             
         }
@@ -57,7 +66,7 @@ class ViewController: UIViewController {
         
         currentTaps++
         
-        updateTaplbl()
+        //updateTaplbl()
         
         if currentTaps >= maxTaps{
             
@@ -77,10 +86,22 @@ class ViewController: UIViewController {
         playBtn.hidden = false
         
         tapBtn.hidden = true
-        tapsToGo.hidden = true
+        tapBtn2.hidden = true
+        tapsToGo.hidden = false
+        
+        updateTaplbl()
         
     }
     
+    @IBAction func coinTap2(sender: UIButton) {
+        
+        currentTaps2++
+        
+        if currentTaps2 >= maxTaps{
+            
+            restartGame()
+        }
+    }
 
 
 }

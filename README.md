@@ -1,2 +1,2 @@
-# Tapper
-A super cool tapping game! 
+# Tapper-
+A super cool tapping game!

@@ -61,25 +61,45 @@
                                     <action selector="dismissKeypad:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="nas-40-bVT"/>
                                 </connections>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1000 Taps to go! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vr-Y6-ALt" userLabel="TapstogoLbl">
-                                <rect key="frame" x="141" y="45" width="318" height="68"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-nu-AKt" userLabel="Coin">
-                                <rect key="frame" x="192" y="157" width="216" height="220"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-nu-AKt" userLabel="Coin">
+                                <rect key="frame" x="216" y="64" width="169" height="172"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="GpU-zm-AjZ"/>
+                                    <constraint firstAttribute="width" constant="169" id="Uff-ki-1bc"/>
                                     <constraint firstAttribute="width" constant="216" id="eOm-F7-Kwy"/>
                                     <constraint firstAttribute="height" constant="220" id="oR7-50-xMt"/>
                                 </constraints>
                                 <state key="normal" image="coin"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eOm-F7-Kwy"/>
+                                        <exclude reference="oR7-50-xMt"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="coinTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gZt-fM-sgX"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfr-J8-eXN">
+                                <rect key="frame" x="216" y="378" width="169" height="172"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="c6h-TM-ZoA"/>
+                                    <constraint firstAttribute="width" constant="169" id="hP9-hf-gND"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="coin"/>
+                                <connections>
+                                    <action selector="coinTap2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gWu-TE-92h"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player X wins!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vr-Y6-ALt" userLabel="TapstogoLbl">
+                                <rect key="frame" x="141" y="194" width="318" height="68"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
+                                <color key="textColor" red="0.96704241420000003" green="0.59463557649999998" blue="0.09892401076" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -91,22 +111,32 @@
                             <constraint firstItem="wfu-nu-AKt" firstAttribute="centerX" secondItem="2Vr-Y6-ALt" secondAttribute="centerX" id="KfP-kO-saF"/>
                             <constraint firstItem="2Vr-Y6-ALt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="NOl-Ux-s1c"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4FS-Xa-0TF" secondAttribute="bottom" constant="46" id="Nwo-we-MFf"/>
+                            <constraint firstItem="2Vr-Y6-ALt" firstAttribute="top" secondItem="PqA-7R-Mwk" secondAttribute="bottom" constant="70" id="UrF-OX-VM7"/>
+                            <constraint firstItem="wfu-nu-AKt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="Veu-fP-bcT"/>
                             <constraint firstItem="4FS-Xa-0TF" firstAttribute="top" secondItem="FMY-sb-XIx" secondAttribute="bottom" constant="24" id="YJg-ez-ir2"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4FS-Xa-0TF" secondAttribute="bottom" constant="70" id="Zip-4f-YPI"/>
+                            <constraint firstItem="wfu-nu-AKt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a1p-Qg-yY6"/>
                             <constraint firstItem="FMY-sb-XIx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d15-Q1-6D0"/>
                             <constraint firstItem="O7k-x1-bmd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jj8-XD-9cq"/>
                             <constraint firstItem="wfu-nu-AKt" firstAttribute="top" secondItem="PqA-7R-Mwk" secondAttribute="bottom" constant="33" id="p5O-gY-cUd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nfr-J8-eXN" secondAttribute="bottom" constant="50" id="puB-5k-Nl3"/>
                             <constraint firstItem="O7k-x1-bmd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tAt-wq-6Rd"/>
+                            <constraint firstItem="2Vr-Y6-ALt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="taB-HW-pu5"/>
                             <constraint firstItem="4FS-Xa-0TF" firstAttribute="centerX" secondItem="FMY-sb-XIx" secondAttribute="centerX" id="tfF-EZ-nbb"/>
                             <constraint firstItem="PqA-7R-Mwk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u87-EO-85W"/>
                             <constraint firstItem="4FS-Xa-0TF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vWj-UZ-UU5"/>
                             <constraint firstItem="PqA-7R-Mwk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="w2D-XN-dzU"/>
+                            <constraint firstItem="nfr-J8-eXN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zKu-L1-Da3"/>
                             <constraint firstItem="2Vr-Y6-ALt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="zVt-Ym-n7o"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="NOl-Ux-s1c"/>
+                                <exclude reference="KLI-HZ-TR9"/>
+                                <exclude reference="KfP-kO-saF"/>
                                 <exclude reference="p5O-gY-cUd"/>
+                                <exclude reference="JOZ-O7-aeS"/>
+                                <exclude reference="NOl-Ux-s1c"/>
+                                <exclude reference="zVt-Ym-n7o"/>
                                 <exclude reference="d15-Q1-6D0"/>
                                 <exclude reference="Nwo-we-MFf"/>
                             </mask>
@@ -117,12 +147,13 @@
                         <outlet property="logoImg" destination="PqA-7R-Mwk" id="S2T-T4-Mrn"/>
                         <outlet property="playBtn" destination="4FS-Xa-0TF" id="RNB-Dk-bwf"/>
                         <outlet property="tapBtn" destination="wfu-nu-AKt" id="w1H-y3-lJG"/>
+                        <outlet property="tapBtn2" destination="nfr-J8-eXN" id="9eO-Ns-eg2"/>
                         <outlet property="tapsToGo" destination="2Vr-Y6-ALt" id="ZrR-ns-gmT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="341"/>
+            <point key="canvasLocation" x="119" y="309"/>
         </scene>
     </scenes>
     <resources>
